@@ -4,11 +4,11 @@ int takeBit(int a, int i);
 
 int main() {
 
-    // parameter and index input
-    int a;
-    int i;
+    //тук задавам стойност на двата параметъра
+    int a = 15;
+    int i = 3;
 
-    printf("%d", takeBit(a,i));
+    printf("%d\n", takeBit(a,i));
 
     return 0;
 }
