@@ -2,11 +2,11 @@
 
 int addDigit(int a, int b);
 
-int main(void) { 
+int main() { 
 
-    int a,b;
-    a = 6;
-    b = 8;
+    //тук задавам стойност на двете събираеми
+    int a = 6;
+    int b = 8;
 
     addDigit(a,b);
 
@@ -15,10 +15,12 @@ int main(void) {
 
 int addDigit(int a, int b) {
 
-    int res;
-    res = a + b;
-
-    printf("%d\n", res);
+    //създавам променлива за резултата
+    int c;
     
-    return 0;
+    c = a + b;
+
+    printf("%d\n", c);
+
+    return c;
 }
