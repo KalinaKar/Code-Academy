@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(){
+
+    /* a = 00000011
+       b = 00000101 */
+    int a = 3;
+    int b = 5; 
+
+    // The result is 00000001
+    printf("a&b = %d\n", a & b);
+
+    // The result is 00001101
+    printf("a|b = %d\n", a | b);
+
+    // The result is 00001100
+    printf("a^b = %d\n", a ^ b);
+
+    return 0; 
+}
