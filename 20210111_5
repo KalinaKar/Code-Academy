@@ -5,11 +5,11 @@ int switchBit(int num, int i);
 int main(){
 
     // задавам желаните параметри
-    int num;
-    int i;
+    int num = 3;
+    int i = 5;
+    
     // принтирам новото число с повдинатия бит
-    printf("%d", switchBit(num, i));
-
+    printf("%d\n", switchBit(num, i));
 
     return 0;
 }
