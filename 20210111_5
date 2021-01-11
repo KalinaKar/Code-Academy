@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int switchBit(int num, int i);
+
+int main(){
+
+    // задавам желаните параметри
+    int num;
+    int i;
+    // принтирам новото число с повдинатия бит
+    printf("%d", switchBit(num, i));
+
+
+    return 0;
+}
+
+int switchBit(int num, int i) {
+
+    //създавам маска с единица на индекс позицията
+    int mask = 1<<i;
+    //обръщам стойността на желания бит в единица чрез XOR 
+    num = num^mask;
+
+    return num;
+}
