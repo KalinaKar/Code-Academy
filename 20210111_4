@@ -5,15 +5,15 @@ int nullBit(int num, int i);
 int main(){
 
     // задавам желаните параметри
-    int num = 63;
-    int i = 2;
+    int num = 3;
+    int i = 5;
     // принтирам новото число с повдинатия бит
-    printf("%d", nullBit(num, i));
+    printf("%d\n", upperBit(num, i));
 
     return 0;
 }
 
-int nullBit(int num, int i) {
+int upperBit(int num, int i) {
 
     //създавам маска с единица на индекс позицията
     int mask = 1<<i;
