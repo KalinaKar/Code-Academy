@@ -6,12 +6,14 @@ int main()
     int num, i;
     num = 0;
     i = 0;
+    
     //създавам маска с единица на индекс позицията
     int mask = 1 << i;
+    
     //обръщам стойността на желания бит в единица чрез XOR
     int res = num ^ mask;
 
-    printf("%d", res);
+    printf("%d\n", res);
 
     return 0;
 }
