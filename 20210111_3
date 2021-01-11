@@ -6,8 +6,8 @@ int nullBit(int num, int i);
 int main(){
 
     // задавам желаните параметри
-    int num = 63;
-    int i = 2;
+    int num;
+    int i;
     // принтирам новото число с изчистения бит
     printf("%d", nullBit(num, i));
 
