@@ -1,13 +1,12 @@
 #include <stdio.h>
-#include <math.h>
 
 int nullBit(int num, int i);
 
 int main(){
 
     // задавам желаните параметри
-    int num;
-    int i;
+    int num = 63;
+    int i = 2;
     // принтирам новото число с изчистения бит
     printf("%d", nullBit(num, i));
 
@@ -16,8 +15,8 @@ int main(){
 
 int nullBit(int num, int i) {
 
-    //позицията на индекса съответсва на степен на двойката
-    int mask = pow(2, i);
+    //създавам маска, с единица на индекс позицията 
+    int mask = 1<<i;
     //първо превръщам желания бит в сигурна единица
     num = num|mask;
     //след това двете 1 и 1 превръщам в 0
