@@ -5,10 +5,10 @@ int nullBit(int num, int i);
 int main(){
 
     // задавам желаните параметри
-    int num = 63;
+    int num = 5;
     int i = 3;
     // принтирам новото число с изчистения бит
-    printf("%d", nullBit(num, i));
+    printf("%d\n", nullBit(num, i));
 
     return 0;
 }
