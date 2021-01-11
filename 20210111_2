@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int takeBit(int a, int i);
+
+int main() {
+
+    // parameter and index input
+    int a;
+    int i;
+
+    printf("%d", takeBit(a,i));
+
+    return 0;
+}
+
+int takeBit(int a, int i) {
+
+    int h = 1;
+    a = a>>i;
+    a = a & h;
+
+    return a;
+}
