@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int nullBit(int num, int i);
+
+int main(){
+
+    // задавам желаните параметри
+    int num;
+    int i;
+    // принтирам новото число с повдинатия бит бит
+    printf("%d", nullBit(num, i));
+
+    return 0;
+}
+
+int nullBit(int num, int i) {
+
+    //позицията на индекса съответсва на степен на двойката
+    int mask = pow(2, i);
+    //превръщам желания бит в единица чрез ИЛИ
+    num = num|mask;
+    
+    return num;
+}
