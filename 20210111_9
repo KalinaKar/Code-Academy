@@ -16,4 +16,6 @@ int main(int num){
     num = num & mask;
 
     printf("%d\n", num);
+
+    return 0;
 }
