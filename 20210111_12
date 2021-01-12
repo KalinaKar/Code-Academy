@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(){
+
+    //задавам стойност на 32-битово число, което ще преобразувам
+    int num = 127; 
+    int mask = 1;  //0000 0000 0000 0000 0000 0000 0000 0001
+
+    //чрез побитов оператор ИЛИ обръщам последния бит на единица
+    num = num|mask;
+
+    /*обръщам на единица бит по бит всяка трета позиция
+    *на 32-битовото число */
+    mask = mask<<3;
+    num = num|mask;
+    mask = mask<<3;
+    num = num|mask;
+    mask = mask<<3;
+    num = num|mask;
+    mask = mask<<3;
+    num = num|mask;
+    mask = mask<<3;
+    num = num|mask;
+    mask = mask<<3;
+    num = num|mask;
+    mask = mask<<3;
+    num = num|mask;
+    mask = mask<<3;
+    num = num|mask;
+    mask = mask<<3;
+    num = num|mask;
+    mask = mask<<3;
+    num = num|mask;
+
+    printf("%d", num);
+
+    return 0;
+}
