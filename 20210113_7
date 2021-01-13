@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main()
+{
+    short int a = 24212;
+    int b = -1357674;
+    int c = 1357674;
+    int d = 1357674000;
+    unsigned int f = 3657895000;
+    printf("%hd\n%d\n%d\n%d\n%u\n", a, b, c, d, f);
+
+    return 0;
+}
