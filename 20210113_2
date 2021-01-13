@@ -1,21 +1,29 @@
-#include <stdlib.h>
-#include<stdio.h>   
- 
-int main()
-{
-    int a[10], n, i;
-    system("cls");
-    printf("Enter the number to convert: ");
-    scanf("%d", &n);
-    for (i = 0; n > 0; i++)
-    {
-        a[i] = n % 2;
-        n = n / 2;
-    }
-    printf("\nBinary of Given Number is=");
-    for (i = i - 1; i >= 0; i--)
-    {
-        printf("%d", a[i]);
-    }
+/*2. Да направим функция, която ще принтира числата от десетичен в бинарен вид:
+*2. Да съберем пак две числа от тип char 255 + 10, да използваме функцията
+за представяне на числата в двоичен вид:*/
+#include <stdio.h>
+
+void bin(unsigned n);
+
+int main(void) {
+
+    char i;
+    char a = 10;
+    bin(a);
+    char x = 255;
+    bin(x);
+    i = a + x;
+    printf("%d\n", i);
+    bin(i);
+
     return 0;
+}
+
+void bin(unsigned n)
+{
+    unsigned i;
+    for (i = 1 << 7; i > 0; i = i >>1)
+        (n & i)? printf("1"): printf("0");
+        printf("\n");
+
 }
