@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main()
+{
+    int a = 10;
+    int b = -127;
+    printf("%d\n", a+b); //-117
+
+    return 0;
+}
