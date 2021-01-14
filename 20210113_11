@@ -9,34 +9,34 @@ int main()
     double candyPrice = 1.5;
     double lollipopPrice = 0.15;
 
-    //представени са като double, за да може посре да се извърши аритметична сметка със същия тип
-    double tomatoWeight;
-    double flourWeight;
-    double yoghourtNum;
-    double iceCreamNum;
-    double candyWeight;
-    double lollipopNum;
+    float tomatoWeight;
+    float flourWeight;
+    int yoghourtNum;
+    int iceCreamNum;
+    float candyWeight;
+    int lollipopNum;
 
     printf("Hello! Welcome to our shop! Today we offer fresh tomatoes,flour, yoghourt, ice cream, candy and lolli pops.\n");
     printf("How much tomatoes would you like?\n");
-    scanf("%lf", &tomatoWeight);
+    scanf("%f", &tomatoWeight);
     printf("How much flour would you like?\n");
-    scanf("%lf", &flourWeight);
+    scanf("%f", &flourWeight);
     printf("How many yoghouts would you like?\n");
-    scanf("%lf", &yoghourtNum);
+    scanf("%d", &yoghourtNum);
     printf("How many ice creams would you like?\n");
-    scanf("%lf", &iceCreamNum);
+    scanf("%d", &iceCreamNum);
     printf("How much candy would you like?\n");
-    scanf("%lf", &candyWeight);
+    scanf("%f", &candyWeight);
     printf("How many lolli pops would you like?\n");
-    scanf("%lf", &lollipopNum);
+    scanf("%d", &lollipopNum);
 
-    double tomatoTotal = tomatoPrice * tomatoWeight;
-    double flourTotal = flourPrice * flourWeight;
-    double yoghourtTotal = yoghourtPrice * yoghourtNum;
-    double iceCreamTotal = iceCreamPrice * iceCreamNum;
-    double candyTotal = candyPrice * candyWeight;
-    double lollipopTotal = lollipopPrice * lollipopNum;
+    //преобразувам на double, за да може посре да се извърши аритметична сметка със същия тип
+    double tomatoTotal = (double) (tomatoPrice * tomatoWeight);
+    double flourTotal = (double) (flourPrice * flourWeight);
+    double yoghourtTotal = (double) (yoghourtPrice * yoghourtNum);
+    double iceCreamTotal = (double) (iceCreamPrice * iceCreamNum);
+    double candyTotal = (double) (candyPrice * candyWeight);
+    double lollipopTotal = (double) (lollipopPrice * lollipopNum);
 
     double totalAmount = tomatoTotal + flourTotal + yoghourtTotal + iceCreamTotal 
     + candyTotal + lollipopTotal;
