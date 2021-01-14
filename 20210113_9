@@ -7,8 +7,8 @@ int main()
 
     printf("%.7f\n", a);
     __mingw_printf("%1.22Lf\n", b);
-    __mingw_printf("%20.20Lf\n", c);
-    __mingw_printf("%20.20Lf\n", d);
+    __mingw_printf("%17.2Lf\n", c);
+    __mingw_printf("%17.17Lf\n", d);
 
     return 0;
 }
