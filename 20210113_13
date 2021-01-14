@@ -10,9 +10,9 @@ int main()
 
     printf("Type: character. Value: %c. Size: %d byte.\n", a, sizeof(char));
     printf("Type: integer. Value: %d. Size: %d bytes.\n", b, sizeof(int));
-    printf("Type: long integer. Value: %d. Size: %d bytes.\n", c, sizeof(long int));
-    printf("Type: float. Value: %f. Size: %d bytes.\n", d, sizeof(float));
-    printf("Type: double. Value: %lf. Size: %d bytes.\n", e, sizeof(double));
+    printf("Type: long integer. Value: %ld. Size: %d bytes.\n", c, sizeof(long int));
+    printf("Type: float. Value: %.0f. Size: %d bytes.\n", d, sizeof(float));
+    printf("Type: double. Value: %.3lf. Size: %d bytes.\n", e, sizeof(double));
 
     return 0;
 }
