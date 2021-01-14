@@ -6,21 +6,41 @@ int main()
     double flourPrice = 1.8;
     double yoghourtPrice = 0.5;
     double iceCreamPrice = 0.6;
-    double candy = 1.5;
+    double candyPrice = 1.5;
     double lollipopPrice = 0.15;
 
-    float tomatoWeight;
-    float flourWeight;
-    unsigned int yoghourtNum;
-    unsigned int iceCreamNum;
-    float candyWeight;
-    unsigned int lollipopNum;
+    //представени са като double, за да може посре да се извърши аритметична сметка със същия тип
+    double tomatoWeight;
+    double flourWeight;
+    double yoghourtNum;
+    double iceCreamNum;
+    double candyWeight;
+    double lollipopNum;
 
     printf("Hello! Welcome to our shop! Today we offer fresh tomatoes,flour, yoghourt, ice cream, candy and lolli pops.\n");
     printf("How much tomatoes would you like?\n");
-    scanf("%f", &tomatoWeight);
+    scanf("%lf", &tomatoWeight);
+    printf("How much flour would you like?\n");
+    scanf("%lf", &flourWeight);
+    printf("How many yoghouts would you like?\n");
+    scanf("%lf", &yoghourtNum);
+    printf("How many ice creams would you like?\n");
+    scanf("%lf", &iceCreamNum);
+    printf("How much candy would you like?\n");
+    scanf("%lf", &candyWeight);
+    printf("How many lolli pops would you like?\n");
+    scanf("%lf", &lollipopNum);
+
     double tomatoTotal = tomatoPrice * tomatoWeight;
-    printf("Your total amount is: %.2lf leva.\n", tomatoTotal);
+    double flourTotal = flourPrice * flourWeight;
+    double yoghourtTotal = yoghourtPrice * yoghourtNum;
+    double iceCreamTotal = iceCreamPrice * iceCreamNum;
+    double candyTotal = candyPrice * candyWeight;
+    double lollipopTotal = lollipopPrice * lollipopNum;
+
+    double totalAmount = tomatoTotal + flourTotal + yoghourtTotal + iceCreamTotal 
+    + candyTotal + lollipopTotal;
+    printf("Your total amount is: %.2lf leva.\n", totalAmount);
 
     return 0;
 }
