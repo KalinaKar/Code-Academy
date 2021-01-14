@@ -1,0 +1,14 @@
+int main()
+{
+    double a = 4.9876543;
+    long double b = 7.123456789012345678890;
+    long double c = 18398458438583853.28;
+    long double d = 18398458438583853.39875937284928422;
+
+    printf("%.7f\n", a);
+    __mingw_printf("%1.22Lf\n", b);
+    __mingw_printf("%20.20Lf\n", c);
+    __mingw_printf("%20.20Lf\n", d);
+
+    return 0;
+}
