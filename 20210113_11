@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    double tomatoPrice = 4.5;
+    double flourPrice = 1.8;
+    double yoghourtPrice = 0.5;
+    double iceCreamPrice = 0.6;
+    double candy = 1.5;
+    double lollipopPrice = 0.15;
+
+    float tomatoWeight;
+    float flourWeight;
+    unsigned int yoghourtNum;
+    unsigned int iceCreamNum;
+    float candyWeight;
+    unsigned int lollipopNum;
+
+    printf("Hello! Welcome to our shop! Today we offer fresh tomatoes,flour, yoghourt, ice cream, candy and lolli pops.\n");
+    printf("How much tomatoes would you like?\n");
+    scanf("%f", &tomatoWeight);
+    double tomatoTotal = tomatoPrice * tomatoWeight;
+    printf("Your total amount is: %.2lf leva.\n", tomatoTotal);
+
+    return 0;
+}
