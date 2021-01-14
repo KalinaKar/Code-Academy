@@ -30,7 +30,7 @@ int main()
     printf("How many lolli pops would you like?\n");
     scanf("%d", &lollipopNum);
 
-    //преобразувам на double, за да може посре да се извърши аритметична сметка със същия тип
+    //преобразувам на double, за да може да се извърши аритметична операция с променливи от един и същи тип
     double tomatoTotal = (double) (tomatoPrice * tomatoWeight);
     double flourTotal = (double) (flourPrice * flourWeight);
     double yoghourtTotal = (double) (yoghourtPrice * yoghourtNum);
