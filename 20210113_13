@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() 
+{
+    char a = 'a';
+    int b = 102;
+    long c = 50000;
+    float d = 6;
+    double e = -48.907;
+
+    printf("Type: character. Value: %c. Size: %d byte.\n", a, sizeof(char));
+    printf("Type: integer. Value: %d. Size: %d bytes.\n", b, sizeof(int));
+    printf("Type: long integer. Value: %d. Size: %d bytes.\n", c, sizeof(long int));
+    printf("Type: float. Value: %f. Size: %d bytes.\n", d, sizeof(float));
+    printf("Type: double. Value: %lf. Size: %d bytes.\n", e, sizeof(double));
+
+    return 0;
+}
