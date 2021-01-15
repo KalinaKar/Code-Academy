@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int test();
+
+int main(void){
+    test();
+    test();
+    int b = test();
+    
+    printf("%d\n", b);
+    return 0;
+}
+
+int test(){
+    static int a = 3;
+    a++;
+}
