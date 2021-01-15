@@ -12,6 +12,7 @@ int main(void){
 }
 
 int test(){
-    static int a = 3;
+    static int a = 0;
     a++;
+    return a;
 }
