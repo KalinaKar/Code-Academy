@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-int global = 3;
+int global = 0;
 void test();
 
 int main(void){
     test();
     test();
     test();
-    printf("%d\n", global);
+    printf("%i\n", global);
     return 0;
 }
 
