@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+const double gPI = 3.14159;
+double sCircle(float r);
+double sEllipse(float a, float b);
+
+int main(){
+    printf("%lf\n",sCircle(1));
+    printf("%lf\n",sCircle(1.5));
+    printf("%lf\n",sCircle(13));
+    printf("%lf\n",sEllipse(1, 2));
+    printf("%lf\n",sEllipse(1.5, 2.5));
+    printf("%lf\n",sEllipse(13, 23));
+    return 0;
+}
+
+double sCircle(float r){
+    double sC = r * r * gPI;
+    return sC;
+}
+
+double sEllipse(float a, float b){
+    double sE = a * b * gPI;
+    return sE;
+}
