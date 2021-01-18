@@ -11,8 +11,10 @@ int main(){
 
     if(nA>nB){
         printf("A has the bigger value.");
-    } else {
+    } else if (nB>nA){
         printf("B has the bigger value.");
+    } else{
+        printf("A and B are equal.");
     }
 
     return 0;
