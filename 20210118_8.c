@@ -4,8 +4,7 @@ int isLetter(char c);
 
 int main(){
     printf("Write a letter from the ASCII table  here:");
-    char c;
-    scanf("%c", &c);
+    char c = getchar();
     isLetter(c);
 
     return 0;
