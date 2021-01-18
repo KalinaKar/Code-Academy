@@ -9,5 +9,11 @@ int main(){
     printf("A value is %d\n", nA);
     printf("B value is %d\n", nB);
 
+    if(nA>nB){
+        printf("A has the bigger value.");
+    } else {
+        printf("B has the bigger value.");
+    }
+
     return 0;
 }
