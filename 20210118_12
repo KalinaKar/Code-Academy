@@ -22,4 +22,6 @@ int main(){
     } else if (nX > nY) {
         printf("%d is less than %d\n", nY, nX);
     }
+
+    return 0;
 }
