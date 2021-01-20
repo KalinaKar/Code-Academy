@@ -18,7 +18,7 @@ int main(int argc, char const *argv[]) {
 void runningLight(int variable) {
     int numOfBits = (int)log2(variable) + 1;
 
-    for (size_t i = 0; i < numOfBits; i++) {
+    for (int i = 0; i < numOfBits; i++) {
         printOffSet(i);
         if (variable & (1 << i)) {
             printf("%c", '*');
@@ -41,7 +41,7 @@ void printOffSet(int offset) {
     if (offset <= 0){
         return;
     }
-    for (size_t i = 0; i < offset; i++){
+    for (int i = 0; i < offset; i++){
         printf("%c", '.');
     }
 }
