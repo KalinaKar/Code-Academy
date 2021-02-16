@@ -1,42 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-void password();
+char *genPass(char *arg);
 
-int main(){
+int main(void){
     srand((unsigned)time(0));
-    char approve;
-    while (1)
-    {
-        password();
-        printf("Do you like this password?\nPress Y for yes\nPress N for new password\n");
+    while(1){
+    char password[7] = "......";
+    char *cpPass = password;
+    genPass(cpPass);
+    printf("Do you like this password(y/n): %s\n", cpPass);
+    char approve = getchar();
+
+    if(approve == '\n')
         approve = getchar();
 
-        if(approve == '\n'){
-            approve = getchar();
-        }
+    if (approve == 'Y' || approve == 'y')
+        break; 
+    }
 
-        if (approve == 'Y' || approve == 'y')
-            break;
-    } 
-    
     return 0;
 }
 
-void password(){
-
-    char *pwd = malloc(6 * sizeof(char));
-
-    /* generate random password */
-    int i, is_capital;
-    for (i = 0; i < 6; i++, pwd++){
+char *genPass(char *arg){
+    int is_capital;
+    char *copy = arg;
+    for ( ; *arg; arg++){
         if ((is_capital = rand() % 2) == 1)
-            *pwd = (rand() % 26) + 65; /* capital letters */
+            *arg = (rand() % 26) + 'A'; /* capital letters */
         else 
-            *pwd = (rand() % 26) + 97; /* small letters */
+            *arg = (rand() % 26) + 'a'; /* small letters */
     }
-    printf("Password:");
-    for(i = 0; i < 7; i++, pwd--)
-        printf("%c", *pwd);
-    printf("\n");
+    return copy;
 }
