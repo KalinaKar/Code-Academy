@@ -5,16 +5,15 @@ char *genPass(char *arg);
 
 int main(void){
     srand((unsigned)time(0));
+    
     while(1){
     char password[7] = "......";
     char *cpPass = password;
     genPass(cpPass);
     printf("Do you like this password(y/n): %s\n", cpPass);
     char approve = getchar();
-
     if(approve == '\n')
         approve = getchar();
-
     if (approve == 'Y' || approve == 'y')
         break; 
     }
