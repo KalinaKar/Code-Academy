@@ -7,59 +7,80 @@
 началника и на втори пас, указване на всеки служител кой е неговият
 началник. */
 #include <stdio.h>
-#define BUFFSIZE 30
+#include <stdlib.h>
+#include <time.h>
+#define BUFFSIZE 20
+#define MIN_SALARY 1000
+#define MAX_SALARY 5001
+#define MIN_EXP 1
+#define MAX_EXP 11
+#define MAX_ID 100
 struct manager {
     int IDnum;
-    char name[BUFFSIZE];
-    char surname[BUFFSIZE];
-    char lastName[BUFFSIZE];
-    int experience;
-    float salary;
+    char *name;
+    char *lastName;
 };
 struct employee {
     int IDnum;
-    char name[BUFFSIZE];
-    char surname[BUFFSIZE];
-    char lastName[BUFFSIZE];
-    char job[BUFFSIZE];
+    char *name;
+    char *surname;
+    char *lastName;
+    char *job;
     int experience;
     float salary;
-    struct manager id;
+    struct manager boss;
 };
 
+struct employee makeEmpl(struct employee empl);
+struct manager makeManager(struct manager boss);
+void printEmpl(struct employee empl);
+
 int main(void){
-    struct manager boss;
-    struct employee empl[10];
-
-    printf("Enter manager ID number: ");
-    scanf("%d", &boss.IDnum);    
-    printf("Enter manager name: ");
-    scanf("%s", &boss.name);
-    printf("Enter manager surname: ");
-    scanf("%s", &boss.surname);
-    printf("Enter manager last name: ");
-    scanf("%s", &boss.lastName);
-    printf("Enter manager job experience in years: ");
-    scanf("%d", &boss.experience);
-    printf("Enter manager salary: ");
-    scanf("%f", &boss.salary);
-
+    srand((unsigned)time(0));
+    struct employee e[10];
     int i;
     for (i = 0; i < 10; i++){
-    printf("Enter employee%d ID number: ");
-    scanf("%d", &empl[i].IDnum);    
-    printf("Enter employee%d name: ");
-    scanf("%s", &empl[i].name);
-    printf("Enter employee%d surname: ");
-    scanf("%s", &empl[i].surname);
-    printf("Enter employee%d last name: ");
-    scanf("%s", &empl[i].lastName);
-    printf("Enter employee%d position: ");
-    scanf("%s", &empl[i].lastName);
-    printf("Enter employee%d job experience in years: ");
-    scanf("%d", &empl[i].experience);
-    printf("Enter employee%d salary: ");
-    scanf("%f", &empl[i].salary);
+        e[i] = makeEmpl(e[i]);
+        printf("Employee No.%d\n", i+1);
+        printEmpl(e[i]);
     }
     return 0;
+}
+
+struct employee makeEmpl(struct employee empl){
+    char *name[] = {"Ivan", "Peter", "Stoyan", "Georgy"};
+    char *lastName[] = {"Ivanov", "Petrov", "Stoyanov", "Goeargiev"};
+    char *job[] = {"IT", "QA", "Junior", "Senior"};
+    struct manager a;
+    empl.IDnum = rand() % MAX_ID + 1;
+    empl.name = name[rand() % 4];
+    empl.surname = lastName[rand() % 4];
+    empl.lastName = lastName[rand() % 4];
+    empl.job = job[rand() % 4];
+    empl.experience = rand() % MAX_EXP + MIN_EXP;
+    empl.salary = rand() % 5000 + 1000;
+    empl.boss = makeManager(a);
+    return empl;
+}
+
+struct manager makeManager(struct manager boss){
+    char *name[] = {"Maria", "Viktoria"};
+    char *lastName[] = {"Stoyanova", "Vasileva"};
+    boss.IDnum = rand() % MAX_ID;
+    boss.name = name[rand() % 2];
+    boss.lastName = lastName[rand() % 2];
+    return boss;
+}
+
+void printEmpl(struct employee empl){
+    printf("ID number: %d\n", empl.IDnum);
+    printf("Name: %s\n", empl.name);
+    printf("Surname: %s\n", empl.surname);
+    printf("Last name: %s\n", empl.lastName);
+    printf("Job: %s\n", empl.job);
+    printf("Years of experience: %d\n", empl.experience);
+    printf("Salary: %f\n", empl.salary);
+    printf("Manager\nID number: %d\nName: %s\nLast name: %s\n", empl.boss.IDnum, empl.boss.name, empl.boss.lastName);
+    printf("\n");
+
 }
