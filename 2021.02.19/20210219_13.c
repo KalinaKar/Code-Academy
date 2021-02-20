@@ -82,5 +82,4 @@ void printEmpl(struct employee empl){
     printf("Salary: %f\n", empl.salary);
     printf("Manager\nID number: %d\nName: %s\nLast name: %s\n", empl.boss.IDnum, empl.boss.name, empl.boss.lastName);
     printf("\n");
-
 }
