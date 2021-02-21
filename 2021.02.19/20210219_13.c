@@ -49,7 +49,7 @@ int main(void){
 
 struct employee makeEmpl(struct employee empl){
     char *name[] = {"Ivan", "Peter", "Stoyan", "Georgy"};
-    char *lastName[] = {"Ivanov", "Petrov", "Stoyanov", "Goeargiev"};
+    char *lastName[] = {"Ivanov", "Petrov", "Stoyanov", "Georgiev"};
     char *job[] = {"IT", "QA", "Junior", "Senior"};
     struct manager a;
     empl.IDnum = rand() % MAX_ID + 1;
