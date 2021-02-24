@@ -18,7 +18,7 @@ int main(void){
     else
         printf("Invalid date\n");
 
-    struct aStruct date2 = {31, 1, 1};
+    struct aStruct date2 = {31, 3, 1};
     if (validate(&date2))
         printDate(&date2);
     else
