@@ -3,9 +3,9 @@
 функция, която валидира датата. */
 #include <stdio.h>
 struct aStruct {
-    unsigned int day : 8;
-    unsigned int month : 8;
-    unsigned int year : 32;
+    unsigned int day : 5;
+    unsigned int month : 4;
+    unsigned int year : 12; 
 };
 
 void printDate(struct aStruct *ptrStruct);
