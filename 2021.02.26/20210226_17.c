@@ -13,51 +13,83 @@
 Изход:
 По-добре е да се купят ... дини с диаметър ... сантиметра и кора с дебелина D
 см вместо ... дини с диаметър ... см и дебелина на кората D1 см. */
-#include <stdio.h>
-#include <stdlib.h>
-typedef struct watermellon {
-    int diameter;
-    float rind;
-} t_wmln; 
+#include<stdio.h>
+#include<stdlib.h>
+#include <time.h>
+#define PI 3.1415926
+typedef struct {
+    int peelThicknessMm;
+    int dieameterMm;
+    unsigned long long int volume;
 
-int makeMelon(int num);
-int makePumpkin(int num);
-
-int main(void){
-    int A = 10;
-    int B = 15;
-    int a = makeMelon(A);
-    int b = makePumpkin(B);
-
-    if (a > b)
-    printf("1\n");
-    return 0;
+}watermelon;
+unsigned long long int getVolume (watermelon w){
+    double pureR = (double)(w.dieameterMm - 2*w.peelThicknessMm)/2;
+    double V = 4.1888*pureR*pureR*pureR;
+    return (unsigned long long)V;
 }
-
-int makeMelon(int num){
-    t_wmln *melon = malloc(num * sizeof(t_wmln));
-    int i;
-    int diameterSum = 0;
-    int rindSum = 0;
-    for (i = 0; i < num; i++){
-        melon[i].diameter = (rand() % 126) + 15;
-        diameterSum += melon[i].diameter;
-        melon[i].rind = ((rand() % 31) + 5) / 10.0;
-        rindSum += melon[i].rind;
+int main() {
+    srand(time(NULL));
+    watermelon* melonArray;
+    watermelon* pumpkinArray;
+    watermelon melon;
+    watermelon pumpkin;
+    watermelon averageMelon = {0,0,0};
+    watermelon averagePumpkin = {0,0,0};
+    int melonCount;
+    int pumpkinCount;
+    printf("how many melon watermelons?\n");
+    scanf("\n%d",&melonCount);
+    printf("how many pumpkin watermelons?\n");
+    scanf("\n%d",&pumpkinCount);
+    melonArray = malloc(sizeof(watermelon)*melonCount);
+    pumpkinArray = malloc(sizeof(watermelon)*pumpkinCount);
+    for (int i = 0; i < melonCount; i++)
+    {
+        melonArray[i].dieameterMm = (rand() % (1400 - 150 + 1)) + 150;
+        melonArray[i].peelThicknessMm = (rand() % (35 - 5 + 1)) + 5;
+        unsigned long long int V =getVolume(melonArray[i]);
+        melonArray[i].volume = V;
+        averageMelon.dieameterMm += melonArray[i].dieameterMm;
+        averageMelon.peelThicknessMm += melonArray[i].peelThicknessMm;
+        averageMelon.volume += melonArray[i].volume;
     }
-    return (diameterSum - rindSum)/ num;
-}
+    free(melonArray);
+    averageMelon.dieameterMm/=melonCount;
+    averageMelon.peelThicknessMm/=melonCount;
+    averageMelon.volume/=melonCount;
 
-int makePumpkin(int num){
-    t_wmln *pumpkin = malloc(num * sizeof(t_wmln));
-    int i;
-    int diameterSum = 0;
-    int rindSum = 0;
-    for (i = 0; i < num; i++){
-        pumpkin[i].diameter = (rand() % 61) + 35;
-        diameterSum += pumpkin[i].diameter;
-        pumpkin[i].rind = ((rand() % 7) + 3) / 10.0;
-        rindSum += pumpkin[i].rind;
+    for (int i = 0; i < pumpkinCount; i++)
+    {
+        pumpkinArray[i].dieameterMm = (rand() % (950 - 350 + 1)) + 350;
+        pumpkinArray[i].peelThicknessMm = (rand() % (9 - 3 + 1)) + 3;
+        unsigned long long int V =getVolume(pumpkinArray[i]);
+        pumpkinArray[i].volume = V;
+        averagePumpkin.dieameterMm += pumpkinArray[i].dieameterMm;
+        averagePumpkin.peelThicknessMm += pumpkinArray[i].peelThicknessMm;
+        averagePumpkin.volume += pumpkinArray[i].volume;
     }
-    return (diameterSum - rindSum)/ num;
+    free(pumpkinArray);
+    averagePumpkin.dieameterMm/=pumpkinCount;
+    averagePumpkin.peelThicknessMm/=pumpkinCount;
+    averagePumpkin.volume/=pumpkinCount;
+    if (averagePumpkin.volume>averageMelon.volume)
+    {
+        printf("it is better to buy %d watermelons with diamether %lf cantimeters and %lf cantimeters peel thickness\n"
+        ,pumpkinCount,(double)averagePumpkin.dieameterMm/10,(double)averagePumpkin.peelThicknessMm/10);
+        printf("instead of %d watermelons with diamether %lf cantimeters and %lf cantimeters peel thickness"
+        ,melonCount,(double)averageMelon.dieameterMm/10,(double)averageMelon.peelThicknessMm/10);
+        
+    }
+    else if (averagePumpkin.volume< averageMelon.volume){
+        printf("it is better to buy %d watermelons with diamether %lf cantimeters and %lf cantimeters peel thickness\n"
+        ,melonCount,(double)averageMelon.dieameterMm/10,(double)averageMelon.peelThicknessMm/10);
+        printf("instead of %d watermelons with diamether %lf cantimeters and %lf cantimeters peel thickness\n"
+        ,pumpkinCount,(double)averagePumpkin.dieameterMm/10,(double)averagePumpkin.peelThicknessMm/10);
+    }
+    else {
+        printf("the end price of the both sorts is equel\n");
+    }
+    
+
 }
