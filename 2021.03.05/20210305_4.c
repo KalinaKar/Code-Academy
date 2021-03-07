@@ -19,9 +19,13 @@ extern int field[7][7];
 void printField(int *curRow, int *curCol);
 int validateMove(char *choice, int *curRow, int *curCol, int *undoRow, int *undoCol);
 char *inputString();
+void play();
 
 int main(void){
-
+    play();
+    return 0;
+}
+void play(){
     int *curRow = (int *)malloc(sizeof(int));
     int *curCol = (int *)malloc(sizeof(int));
     char *choice = (char *)malloc(sizeof(char));
@@ -49,12 +53,10 @@ int main(void){
         tempC = *curCol;
         tempR2 = *curRow2;
         tempC2 = *curCol2;
-        printf("%s's field:", name1);
-        printField(curRow, curCol);
-        printf("\n\n%s's field:", name2);
-        printField(curRow2, curCol2);
         
         while(1){
+            printf("%s's field:", name1);
+            printField(curRow, curCol);
             printf("\n%s, choose your move:\nw for Up\ns for Down\na for Left\nd for Right\nq to Undo\n", name1);
             scanf("%c", choice);
             nl = getchar();
@@ -69,6 +71,8 @@ int main(void){
         *undoCol = tempC;
 
         while(1){
+            printf("\n\n%s's field:", name2);
+            printField(curRow2, curCol2);
             printf("\n%s, choose your move:\nw for Up\ns for Down\na for Left\nd for Right\nq to Undo\n", name2);
             scanf("%c", choice);
             nl= getchar();
@@ -101,7 +105,6 @@ int main(void){
     free(undoCol2);
     free(name1);
     free(name2);
-    return 0;
 }
 
 void printField(int *curRow, int *curCol){
