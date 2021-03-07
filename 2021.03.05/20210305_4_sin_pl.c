@@ -18,9 +18,14 @@ extern int field[7][7];
 
 void printField(int *curRow, int *curCol);
 int validateMove(char *choice, int *curRow, int *curCol, int *undoRow, int *undoCol);
+void play();
 
 int main(void){
+    play();
+    return 0;
+}
 
+void play(){
     int *curRow = (int *)malloc(sizeof(int));
     int *curCol = (int *)malloc(sizeof(int));
     char *choice = (char *)malloc(sizeof(char));
@@ -55,7 +60,6 @@ int main(void){
     free(curCol);
     free(undoRow);
     free(undoCol);
-    return 0;
 }
 
 void printField(int *curRow, int *curCol){
