@@ -1,0 +1,31 @@
+Enter number of participants:
+Enter participant 1 first name:
+Enter participant 1 last name:
+Enter participant 1 age:
+Enter participant 1 running number:
+Enter participant 2 first name:
+Enter participant 2 last name:
+Enter participant 2 age:
+Enter participant 2 running number:
+Enter participant 3 first name:
+Enter participant 3 last name:
+Enter participant 3 age:
+Enter participant 3 running number:
+
+Participant 1:
+Name: Ana
+Surname: Sana
+Age: 14
+Running number: 3
+
+Participant 2:
+Name: Koko
+Surname: Moko
+Age: 16
+Running number: 1
+
+Participant 3:
+Name: Zara
+Surname: Zaza
+Age: 15
+Running number: 2
