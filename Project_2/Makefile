@@ -1,11 +1,12 @@
+# -*- MakeFile -*-
 CC=gcc
 
 ifeq ($(OS),Windows_NT)
-	RM=del /Q
-	TARGET=fruits.exe
+	RM = del /Q
+	TARGET = fruits.exe
 else
-	RM=rm -f
-	TARGET=fruits
+	RM = rm -f
+	TARGET = fruits
 endif
 
 all:
