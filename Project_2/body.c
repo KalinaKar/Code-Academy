@@ -1,6 +1,7 @@
 #include "fruits.h"
 
 void calcFruitWeight(char *fileIn, char *fileOut){
+    /* takes the names of the input and output files and manages the other funcitions */
     FILE *pfileIn = openFile(fileIn, "rt");
 
     int numFruits;
@@ -33,6 +34,7 @@ void calcFruitWeight(char *fileIn, char *fileOut){
 }
 
 FILE *openFile(char *filename, char *mode){
+    /* returns a pointer to an open file or exits the program if file does not open */
     FILE *pfile = NULL;
     pfile = fopen(filename, mode);
     if (!pfile){
@@ -43,6 +45,7 @@ FILE *openFile(char *filename, char *mode){
 }
 
 int *subsetSum(int *a, int n){
+    /* calculates subset of sum algorithm and returns a pointer to the subset if any possible */
     int m[n+1][K+1];
     memset(m, 0, (n+1) * (K+1) * sizeof(int));
 
@@ -87,6 +90,7 @@ int *subsetSum(int *a, int n){
 }
 
 void memoryCheck(int *p){
+    /* aborts program if p holds NULL */
     if(p == NULL){
             perror("Memory error");
             abort();
