@@ -1,0 +1,30 @@
+'''
+Created on Apr 27, 2021
+
+@author: kalina
+'''
+
+class Parent:
+    def __init__(self, name):
+        self.name = name
+        
+    def speak(self):
+        print("Text printed from speak(), class Parent")
+        
+    def show(self):
+        print(f"My name is {self.name}")
+
+p = Parent("Kalina")
+p.show()     
+p.speak()   
+
+class Child(Parent):
+    def __init__(self, name):
+        super().__init__(name)
+        
+    def speak(self): #example for method overriding 
+        print("Text printed from speak(), class Child")
+        
+c = Child("Bill")
+c.show()
+c.speak()
