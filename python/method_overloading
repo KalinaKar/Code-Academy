@@ -1,0 +1,11 @@
+'''
+Created on Apr 27, 2021
+
+@author: kalina
+'''
+
+def sum1(a , b): #method overloading example
+    return a + b
+
+print(sum1(4,5))
+print(sum1("Hello, ", "Alexander"))
