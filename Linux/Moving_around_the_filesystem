@@ -1,0 +1,52 @@
+1. Create a directory in your home directory called projects. In the projects
+directory, create nine empty fi les that are named house1, house2, house3, and so on to house9. Assuming there are lots of other files in that directory, come up with a single argument to ls that would list just those nine files.
+
+kalina@PC-Kaly:~$ mkdir projects
+kalina@PC-Kaly:~$ ls
+2021.03.25.ipynb  2021.04.04.ipynb  2021.04.18.ipynb  Desktop    eclipse   projects   Videos
+2021.03.28.ipynb  2021.04.11.ipynb  2021.04.18.py     Documents  Music     Public
+2021.03.31.ipynb  2021.04.14.ipynb  2021.04.21.ipynb  Downloads  Pictures  Templates
+kalina@PC-Kaly:~$ cd projects
+kalina@PC-Kaly:~/projects$ touch house{1..9}
+kalina@PC-Kaly:~/projects$ ls house*
+house1  house2  house3  house4  house5  house6  house7  house8  house9
+
+
+
+2. Make the $HOME/projects/houses/doors/ directory path. Create the following empty files within this directory path (try using absolute and relative paths from your home directory):
+$HOME/projects/houses/bungalow.txt
+$HOME/projects/houses/doors/bifold.txt
+$HOME/projects/outdoors/vegetation/landscape.txt
+
+kalina@PC-Kaly:~/projects/houses$ pwd
+/home/kalina/projects/houses
+kalina@PC-Kaly:~/projects/houses$ mkdir doors
+kalina@PC-Kaly:~/projects/houses$ ls
+doors
+kalina@PC-Kaly:~/projects/houses$ touch bungalow.txt
+kalina@PC-Kaly:~/projects/houses$ touch ./doors/bifold.txt
+kalina@PC-Kaly:~/projects/houses$ mkdir $HOME/projects/outdoors
+kalina@PC-Kaly:~/projects/houses$ mkdir $HOME/projects/outdoors/vegetation
+
+
+
+3. Copy the files house1 and house5 to the $HOME/projects/houses/ directory.
+
+kalina@PC-Kaly:~/projects$ pwd
+/home/kalina/projects
+kalina@PC-Kaly:~/projects$ cp -r house1 ./houses
+kalina@PC-Kaly:~/projects$ cp -r house5 ./houses
+kalina@PC-Kaly:~/projects$ ls
+house1  house2  house3  house4  house5  house6  house7  house8  house9  houses  landscape.txt  outdoors
+kalina@PC-Kaly:~/projects$ ls ./houses 
+bungalow.txt  doors  house1  house5
+
+
+
+4. Remove the files house6, house7, and house8 without being prompted.
+
+kalina@PC-Kaly:~/projects$ ls
+house1  house2  house3  house4  house5  house6  house7  house8  house9  houses  landscape.txt  outdoors
+kalina@PC-Kaly:~/projects$ rm house{6..8}
+kalina@PC-Kaly:~/projects$ ls
+house1  house2  house3  house4  house5  house9  houses  landscape.txt  outdoors
